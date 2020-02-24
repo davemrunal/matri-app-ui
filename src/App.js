@@ -1,8 +1,8 @@
 import React from 'react';
-import { LinkContainer } from "react-router-bootstrap";
+import { LinkContainer } from 'react-router-bootstrap';
 import './App.css';
-import { Link } from "react-router-dom";
-import { Nav, Navbar, NavItem } from "react-bootstrap";
+import { Link } from 'react-router-dom';
+import { Nav, Navbar, NavItem } from 'react-bootstrap';
 import Routes from './Routes'
 
 function App(props) {
@@ -18,10 +18,10 @@ function App(props) {
                 <Navbar.Collapse>
                     <Nav pullRight>
                         <Nav pullRight>
-                            <LinkContainer to={"/signup"}>
+                            <LinkContainer to={'/signup'}>
                                 <NavItem href="/signup">Signup</NavItem>
                             </LinkContainer>
-                            <LinkContainer to={"/login"}>
+                            <LinkContainer to={'/login'}>
                                 <NavItem href="/login">Login</NavItem>
                             </LinkContainer>
                         </Nav>
