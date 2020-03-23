@@ -21,7 +21,7 @@ export default function ConfirmSignup(props) {
         try {
             await Auth.confirmSignUp(props.email, fields.confirmationCode);
             props.resetConfirmWindow();
-            props.history.push('/login');
+            //props.history.push('/login');
         } catch (e) {
             alert(e.message);
         }

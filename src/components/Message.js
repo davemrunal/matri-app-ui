@@ -6,12 +6,14 @@ export default function Message(props) {
     return (
         <div className={`${props.style}`}>
             <Glyphicon glyph="ok"/>
-            <p>{props.actionMessage}</p>
+            <p>{props.actionResultMessage}</p>
+            {props.redirectAction && props.redirectMessage &&
             <p>
                 <Link to={props.redirectAction}>
                     {props.redirectMessage}
                 </Link>
             </p>
+            }
         </div>
     );
 }

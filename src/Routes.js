@@ -6,6 +6,8 @@ import Login from './containers/Login';
 import AppliedRoute from './components/AppliedRoute';
 import Signup from './containers/Signup';
 import ConfirmSignup from './components/ConfirmSignup';
+import ResetPassword from './components/ResetPassword';
+import UnauthenticatedRoute from './components/UnauthenticatedRoute';
 
 export default function Routes({appProps}) {
     return (
@@ -14,6 +16,7 @@ export default function Routes({appProps}) {
             <AppliedRoute path="/login" exact component={Login} appProps={appProps}/>
             <AppliedRoute path="/signup" exact component={Signup} appProps={appProps}/>
             <AppliedRoute path="/confirmAccount" exact component={ConfirmSignup} appProps={appProps}/>
+            <UnauthenticatedRoute path="/login/reset" exact component={ResetPassword} appProps={appProps}/>
             { /* Finally, catch all unmatched routes */}
             <Route component={NotFound}/>
         </Switch>
