@@ -1,36 +1,69 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import './App.css';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Nav, Navbar, NavItem } from 'react-bootstrap';
 import Routes from './Routes'
+import { Auth } from 'aws-amplify';
 
 function App(props) {
+    const [isAuthenticated, userHasAuthenticated] = useState(false);
+    const [isAuthenticating, setIsAuthenticating] = useState(true);
+
+    useEffect(() => {
+        onLoad();
+    }, []);
+
+    async function onLoad() {
+        try {
+            await Auth.currentSession();
+            userHasAuthenticated(true);
+        } catch (e) {
+            if (e !== 'No current user') {
+                alert(e);
+            }
+        }
+
+        setIsAuthenticating(false);
+    }
+
+    async function handleLogout() {
+        await Auth.signOut();
+        userHasAuthenticated(false);
+        props.history.push('/login');
+    }
+
     return (
+        !isAuthenticating &&
         <div className="App container">
             <Navbar fluid collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <Link to="/">Purna Matrimony</Link>
+                        <Link to="/">Matrimony</Link>
                     </Navbar.Brand>
                     <Navbar.Toggle/>
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav pullRight>
                         <Nav pullRight>
-                            <LinkContainer to={'/signup'}>
-                                <NavItem href="/signup">Signup</NavItem>
-                            </LinkContainer>
-                            <LinkContainer to={'/login'}>
-                                <NavItem href="/login">Login</NavItem>
-                            </LinkContainer>
+                            {isAuthenticated
+                                ? <NavItem onClick={handleLogout}>Logout</NavItem>
+                                : <>
+                                    <LinkContainer to="/signup">
+                                        <NavItem>Signup</NavItem>
+                                    </LinkContainer>
+                                    <LinkContainer to="/login">
+                                        <NavItem>Login</NavItem>
+                                    </LinkContainer>
+                                </>
+                            }
                         </Nav>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-            <Routes/>
+            <Routes appProps={{isAuthenticated, userHasAuthenticated}}/>
         </div>
     );
 }
 
-export default App;
+export default withRouter(App);
