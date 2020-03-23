@@ -4,7 +4,7 @@ import { ControlLabel, FormControl, FormGroup } from 'react-bootstrap';
 import LoaderButton from '../components/LoaderButton';
 import { useFormFields } from '../libs/hooksLib';
 import './Login.css';
-import ConfirmSignup from './ConfirmSignup';
+import ConfirmSignup from '../components/ConfirmSignup';
 
 export default function Login(props) {
     const [isLoading, setIsLoading] = useState(false);
