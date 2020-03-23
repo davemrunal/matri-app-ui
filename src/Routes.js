@@ -5,7 +5,7 @@ import NotFound from './containers/NotFound';
 import Login from './containers/Login';
 import AppliedRoute from './components/AppliedRoute';
 import Signup from './containers/Signup';
-import ConfirmSignup from './containers/ConfirmSignup';
+import ConfirmSignup from './components/ConfirmSignup';
 
 export default function Routes({appProps}) {
     return (
