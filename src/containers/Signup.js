@@ -44,10 +44,10 @@ export default function Signup(props) {
                 } catch (e) {
                     //TODO
                 }
-                setIsLoading(false);
             } else {
                 alert(e.message);
             }
+            setIsLoading(false);
         }
     }
 
