@@ -18,7 +18,7 @@ function App(props) {
 
     async function onLoad() {
         try {
-            await console.log(Auth.currentSession());
+            await Auth.currentSession();
             userHasAuthenticated(true);
         } catch (e) {
             if (e !== 'No current user') {
