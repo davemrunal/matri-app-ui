@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import { Auth } from 'aws-amplify';
-import { ControlLabel, FormControl, FormGroup } from 'react-bootstrap';
 import LoaderButton from '../components/LoaderButton';
 import { useFormFields } from '../libs/hooksLib';
 import './Login.css';
@@ -8,8 +8,12 @@ import ConfirmSignup from '../components/ConfirmSignup';
 import { Link } from 'react-router-dom';
 import { SUCCESS_MESSAGE_LOGIN_ACCNT_CONFIRM } from '../components/Constants';
 import { renderSuccessMessage } from '../components/Utils';
+import { ControlLabel, FormControl, FormGroup } from 'react-bootstrap';
+import { useAppContext } from '../libs/contextLib';
 
 export default function Login(props) {
+    const history = useHistory();
+    const {userHasAuthenticated} = useAppContext();
     const [isLoading, setIsLoading] = useState(false);
     const [fields, handleFieldChange] = useFormFields({
         email: '',
@@ -27,8 +31,8 @@ export default function Login(props) {
         setIsLoading(true);
         try {
             await Auth.signIn(fields.email, fields.password);
-            props.userHasAuthenticated(true);
-            props.history.push('/');
+            userHasAuthenticated(true);
+            history.push('/profileDetails');
         } catch (e) {
             setIsLoading(false);
             //if the username/password is right but the account is not confirmed
@@ -82,10 +86,13 @@ export default function Login(props) {
     function renderConfirmSignup() {
         return (
             <div>
-                <ConfirmSignup {...props} email={fields.email} resetConfirmWindow={() => {
+                <ConfirmSignup email={fields.email} resetConfirmWindow={() => {
                     setUserConfirmWindow(false);
                     setShowSuccessMessage(true);
-                }}/>
+                }}
+                isFunctionSent="true"
+                nav="/profileDetails"
+                />
             </div>
         );
     }

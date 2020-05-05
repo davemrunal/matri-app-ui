@@ -4,8 +4,12 @@ import LoaderButton from './LoaderButton';
 import { useFormFields } from '../libs/hooksLib';
 import '../containers/Signup.css';
 import { Auth } from 'aws-amplify';
+import { useHistory } from 'react-router-dom';
+import { useAppContext } from '../libs/contextLib';
 
 export default function ConfirmSignup(props) {
+    const history = useHistory();
+    const {userHasAuthenticated} = useAppContext();
     const [fields, handleFieldChange] = useFormFields({
         confirmationCode: ''
     });
@@ -20,8 +24,9 @@ export default function ConfirmSignup(props) {
         setIsLoading(true);
         try {
             await Auth.confirmSignUp(props.email, fields.confirmationCode);
-            props.resetConfirmWindow();
-            //props.history.push('/login');
+            //userHasAuthenticated(true);
+            props.isFunctionSent && props.resetConfirmWindow();
+            props.nav && history.push(props.nav);
         } catch (e) {
             alert(e.message);
         }

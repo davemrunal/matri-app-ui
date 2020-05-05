@@ -5,8 +5,10 @@ import { useFormFields } from '../libs/hooksLib';
 import './Signup.css';
 import { Auth } from 'aws-amplify';
 import ConfirmSignup from '../components/ConfirmSignup';
+import { useHistory } from 'react-router-dom';
 
 export default function Signup(props) {
+    const history = useHistory();
     const [fields, handleFieldChange] = useFormFields({
         email: '',
         password: '',
@@ -51,7 +53,7 @@ export default function Signup(props) {
 
     function renderConfirmationForm() {
         return (
-            <ConfirmSignup {...props} email={fields.email}/>
+            <ConfirmSignup email={fields.email} nav="/login"/>
         );
     }
 
