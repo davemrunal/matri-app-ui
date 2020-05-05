@@ -1,0 +1,36 @@
+@media all and (min-width: 480px) {
+    .ProfilePhoto {
+        padding: 60px 0;
+    }
+
+    .ProfilePhoto form {
+        margin: 0 auto;
+        max-width: 320px;
+    }
+}
+
+.Login form a {
+    padding-bottom: 10px;
+    display: block;
+    font-size: 14px;
+}
+
+.Login .success {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.Login .success .glyphicon {
+    color: grey;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.photo-container {
+    text-align: center;
+}
+
+.photo-uploaded {
+    margin-left: 10px;
+    border: 1px solid black;
+}
