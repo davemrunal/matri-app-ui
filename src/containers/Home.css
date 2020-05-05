@@ -25,3 +25,11 @@
 .Home .lander p {
     color: #999;
 }
+
+.landingImage {
+    background-image: url(../images/palm2.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+

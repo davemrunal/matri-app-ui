@@ -53,7 +53,7 @@ export default function Signup(props) {
 
     function renderConfirmationForm() {
         return (
-            <ConfirmSignup {...props} email={fields.email}/>
+            <ConfirmSignup email={fields.email} nav="/login"/>
         );
     }
 

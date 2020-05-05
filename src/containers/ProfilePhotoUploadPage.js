@@ -8,6 +8,7 @@ import { s3Upload } from '../libs/awsLibs';
 import { useStateWithLabel } from '../libs/stateWithLabel';
 
 export default function ProfilePhotoUploadPage() {
+    const history = useHistory();
     const [stateFileArray, setStateFileArray] = useStateWithLabel([], 'URI');
     const [stateFileArrayWithoutURI, setStateFileArrayWithoutURI] = useStateWithLabel([], 'withoutURI');
     const [isLoading, setIsLoading] = useState(false);
@@ -50,8 +51,7 @@ export default function ProfilePhotoUploadPage() {
             await Promise.all(promiseArr);
             // console.log('uploading first image now' + stateFileArrayWithoutURI[0]);
             // await s3Upload(stateFileArrayWithoutURI[0]);
-            //history.push('/');
-            setIsLoading(false);
+            history.push('/');
         } catch (e) {
             setIsLoading(false);
         }

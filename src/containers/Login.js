@@ -32,7 +32,7 @@ export default function Login(props) {
         try {
             await Auth.signIn(fields.email, fields.password);
             userHasAuthenticated(true);
-            history.push('/');
+            history.push('/profileDetails');
         } catch (e) {
             setIsLoading(false);
             //if the username/password is right but the account is not confirmed
@@ -86,10 +86,13 @@ export default function Login(props) {
     function renderConfirmSignup() {
         return (
             <div>
-                <ConfirmSignup {...props} email={fields.email} resetConfirmWindow={() => {
+                <ConfirmSignup email={fields.email} resetConfirmWindow={() => {
                     setUserConfirmWindow(false);
                     setShowSuccessMessage(true);
-                }}/>
+                }}
+                isFunctionSent="true"
+                nav="/profileDetails"
+                />
             </div>
         );
     }
