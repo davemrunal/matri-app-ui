@@ -86,6 +86,10 @@ export default function Signup(props) {
                         value={fields.confirmPassword}
                     />
                 </FormGroup>
+                <span id="passwordMatchError" style={{ display: ((fields.password === fields.confirmPassword))? "none" : "block" }}>
+                    Passwords don't match
+                </span>
+                <br/>
                 <LoaderButton
                     block
                     type="submit"

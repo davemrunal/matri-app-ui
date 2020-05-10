@@ -38,7 +38,7 @@ function App(props) {
     return (
         !isAuthenticating &&
         <div className="App">
-            <Navbar fluid collapseOnSelect>
+            <Navbar id="nbar" inverse collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
                         <Link to="/">Matrimony</Link>
