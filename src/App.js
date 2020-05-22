@@ -11,6 +11,7 @@ import { useStateWithLabel } from './libs/stateWithLabel';
 function App(props) {
     const [isAuthenticated, userHasAuthenticated] = useStateWithLabel(false, 'isAuthenticated');
     const [isAuthenticating, setIsAuthenticating] = useStateWithLabel(true, 'isAuthenticating');
+    const [emailId, setEmailId] = useStateWithLabel('', 'emailId');
 
     useEffect(() => {
         onLoad();
@@ -19,6 +20,8 @@ function App(props) {
     async function onLoad() {
         try {
             await Auth.currentSession();
+            const currentUserInfo = await Auth.currentUserInfo();
+            setEmailId(currentUserInfo.attributes.email);
             userHasAuthenticated(true);
         } catch (e) {
             if (e !== 'No current user') {
@@ -41,7 +44,7 @@ function App(props) {
             <Navbar id="nbar" inverse collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <Link to="/">Matrimony</Link>
+                        <Link to="/">match.ly</Link>
                     </Navbar.Brand>
                     <Navbar.Toggle/>
                 </Navbar.Header>
@@ -63,7 +66,7 @@ function App(props) {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-            <AppContext.Provider value={{isAuthenticated, userHasAuthenticated}}>
+            <AppContext.Provider value={{isAuthenticated, userHasAuthenticated, emailId, setEmailId}}>
                 <Routes/>
             </AppContext.Provider>
         </div>

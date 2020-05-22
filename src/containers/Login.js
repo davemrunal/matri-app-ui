@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import { useHistory } from "react-router-dom";
-import { Auth } from 'aws-amplify';
+import { Link, useHistory } from 'react-router-dom';
+import { API, Auth } from 'aws-amplify';
 import LoaderButton from '../components/LoaderButton';
 import { useFormFields } from '../libs/hooksLib';
 import './Login.css';
 import ConfirmSignup from '../components/ConfirmSignup';
-import { Link } from 'react-router-dom';
 import { SUCCESS_MESSAGE_LOGIN_ACCNT_CONFIRM } from '../components/Constants';
 import { renderSuccessMessage } from '../components/Utils';
 import { ControlLabel, FormControl, FormGroup } from 'react-bootstrap';
 import { useAppContext } from '../libs/contextLib';
 
+
 export default function Login(props) {
+    const {emailId} = useAppContext();
+    const {setEmailId} = useAppContext();
     const history = useHistory();
     const {userHasAuthenticated} = useAppContext();
     const [isLoading, setIsLoading] = useState(false);
@@ -32,6 +34,17 @@ export default function Login(props) {
         try {
             await Auth.signIn(fields.email, fields.password);
             userHasAuthenticated(true);
+            setEmailId(fields.email);
+            const profileItem = await getProfileItem();
+            if (profileItem) {
+                if (profileItem.profileDetailsAdded && profileItem.isPhotoUploaded) {
+                    history.push('/matchedProfiles');
+                    return;
+                } else if (profileItem.profileDetailsAdded) {
+                    history.push('/profilePhotos');
+                    return;
+                }
+            }
             history.push('/profileDetails');
         } catch (e) {
             setIsLoading(false);
@@ -44,6 +57,19 @@ export default function Login(props) {
                 alert(e.code);
             }
         }
+    }
+
+    async function getProfileItem() {
+        const item = {
+            profileDetailsAdded: true,
+            isPhotoUploaded: false,
+        };
+        return item;
+        // return API.post('profile', '/getProfileItem', {
+        //     body: {
+        //         emailId: emailId
+        //     }
+        // });
     }
 
     function renderLoginForm() {

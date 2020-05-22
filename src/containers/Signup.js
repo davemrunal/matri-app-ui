@@ -66,8 +66,10 @@ export default function Signup(props) {
                     <FormControl
                         autoFocus
                         type="email"
+                        pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
                         value={fields.email}
                         onChange={handleFieldChange}
+                        required
                     />
                 </FormGroup>
                 <FormGroup controlId="password" bsSize="large">

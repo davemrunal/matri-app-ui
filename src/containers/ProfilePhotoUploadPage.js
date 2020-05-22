@@ -4,10 +4,13 @@ import { ControlLabel, FormControl, FormGroup } from 'react-bootstrap';
 import LoaderButton from '../components/LoaderButton';
 import config from '../config';
 import { useHistory } from 'react-router-dom';
+import { API } from 'aws-amplify';
 import { s3Upload } from '../libs/awsLibs';
 import { useStateWithLabel } from '../libs/stateWithLabel';
+import { useAppContext } from '../libs/contextLib';
 
 export default function ProfilePhotoUploadPage() {
+    const {emailId} = useAppContext();
     const history = useHistory();
     const [stateFileArray, setStateFileArray] = useStateWithLabel([], 'URI');
     const [stateFileArrayWithoutURI, setStateFileArrayWithoutURI] = useStateWithLabel([], 'withoutURI');
@@ -41,6 +44,14 @@ export default function ProfilePhotoUploadPage() {
         setStateFileArrayWithoutURI(tempArrayWithoutURI);
     }
 
+    async function flipIsPhotoUploadedFlagInDynamoDb() {
+        return API.put('profile', `/profile/flipPhotoFlag`, {
+            body: {
+                emailId: emailId
+            }
+        });
+    }
+
     async function handleSubmit(e) {
         e.preventDefault();
         setIsLoading(true);
@@ -49,6 +60,7 @@ export default function ProfilePhotoUploadPage() {
                 await s3Upload(file);
             });
             await Promise.all(promiseArr);
+            await flipIsPhotoUploadedFlagInDynamoDb();
             // console.log('uploading first image now' + stateFileArrayWithoutURI[0]);
             // await s3Upload(stateFileArrayWithoutURI[0]);
             history.push('/');
