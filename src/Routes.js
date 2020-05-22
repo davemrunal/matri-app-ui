@@ -10,6 +10,7 @@ import UnauthenticatedRoute from './components/UnauthenticatedRoute';
 import NewProfile from './containers/NewProfile';
 import ProfilePhotoUploadPage from './containers/ProfilePhotoUploadPage';
 import AuthenticatedRoute from './components/AuthenticatedRoute';
+import MatchedProfileDisplay from './containers/MatchedProfilesDisplay';
 
 export default function Routes() {
     return (
@@ -31,6 +32,9 @@ export default function Routes() {
             </UnauthenticatedRoute>
             <AuthenticatedRoute exact path="/profileDetails">
                 <NewProfile />
+            </AuthenticatedRoute>
+            <AuthenticatedRoute exact path="/matchedProfiles">
+                <MatchedProfileDisplay />
             </AuthenticatedRoute>
             <AuthenticatedRoute exact path="/profilePhotos">
                 <ProfilePhotoUploadPage />

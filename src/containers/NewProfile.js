@@ -9,9 +9,10 @@ import { inputParsers } from '../components/Utils';
 import { onError } from '../libs/errorLib';
 import { API } from 'aws-amplify';
 import { useHistory } from 'react-router-dom';
+import { useAppContext } from '../libs/contextLib';
 
 export default function NewProfile(props) {
-
+    const { emailId } = useAppContext();
     const history = useHistory();
     const [isLoading, setIsLoading] = useState(false);
     const [country, setCountry] = useState('');
@@ -42,6 +43,8 @@ export default function NewProfile(props) {
                 }
             }
         }
+        //set emailId
+        data.set('emailId', emailId);
         // NOTE: you access FormData fields with `data.get(fieldName)`
         setInvalid(false);
         setDisplayErrors(false);
@@ -52,7 +55,7 @@ export default function NewProfile(props) {
     async function createProfile(data) {
         //apiName first param coming from index.js
         //path second param coming from endpoint path
-        return API.post('profile', '/profiles', {
+        return API.post('profile', '/createProfile', {
             body: data
         });
     }
