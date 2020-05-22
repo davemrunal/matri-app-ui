@@ -61,7 +61,7 @@ export default function Login(props) {
 
     async function getProfileItem() {
         const item = {
-            profileDetailsAdded: true,
+            profileDetailsAdded: false,
             isPhotoUploaded: false,
         };
         return item;
