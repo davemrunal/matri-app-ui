@@ -40,11 +40,11 @@ function App(props) {
 
     return (
         !isAuthenticating &&
-        <div className="App">
-            <Navbar id="nbar" inverse collapseOnSelect>
+        <div className="App landingImage">
+            <Navbar id="nbar" collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <Link to="/">match.ly</Link>
+                        <Link to="/" className="brandName">match.ly</Link>
                     </Navbar.Brand>
                     <Navbar.Toggle/>
                 </Navbar.Header>
