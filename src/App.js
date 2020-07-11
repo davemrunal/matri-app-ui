@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
-import { LinkContainer } from 'react-router-bootstrap';
 import './App.css';
 import { Link, withRouter } from 'react-router-dom';
-import { Nav, Navbar, NavItem } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import Routes from './Routes'
 import { Auth } from 'aws-amplify';
 import { AppContext } from './libs/contextLib';
 import { useStateWithLabel } from './libs/stateWithLabel';
+import Nav from 'react-bootstrap/Nav';
+import Container from 'react-bootstrap/Container';
 
 function App(props) {
     const [isAuthenticated, userHasAuthenticated] = useStateWithLabel(false, 'isAuthenticated');
@@ -28,7 +29,6 @@ function App(props) {
                 alert(e);
             }
         }
-
         setIsAuthenticating(false);
     }
 
@@ -40,31 +40,32 @@ function App(props) {
 
     return (
         !isAuthenticating &&
-        <div className="App landingImage">
-            <Navbar id="nbar" collapseOnSelect>
-                <Navbar.Header>
-                    <Navbar.Brand>
-                        <Link to="/" className="brandName">match.ly</Link>
-                    </Navbar.Brand>
-                    <Navbar.Toggle/>
-                </Navbar.Header>
-                <Navbar.Collapse>
-                    <Nav pullRight>
-                        <Nav pullRight>
-                            {isAuthenticated
-                                ? <NavItem onClick={handleLogout}>Logout</NavItem>
-                                : <>
-                                    <LinkContainer to="/signup">
-                                        <NavItem>Signup</NavItem>
-                                    </LinkContainer>
-                                    <LinkContainer to="/login">
-                                        <NavItem>Login</NavItem>
-                                    </LinkContainer>
-                                </>
-                            }
-                        </Nav>
+        <div className="App">
+            <Navbar expand="lg">
+                <Container>
+                <Navbar.Brand as={Link} to="/">match.me</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="ml-auto">
+                        {isAuthenticated
+                            ? <Nav.Item onClick={handleLogout}>Logout</Nav.Item>
+                            : <>
+                                <Nav.Link as={Link} to="/about">
+                                    About Us
+                                </Nav.Link>
+                                <Nav.Link as={Link} to="/">
+                                    Contact Us
+                                </Nav.Link> <Nav.Link as={Link} to="/signup">
+                                Signup
+                            </Nav.Link>
+                                <Nav.Link as={Link} to="/login">
+                                    Login
+                                </Nav.Link>
+                            </>
+                        }
                     </Nav>
                 </Navbar.Collapse>
+                </Container>
             </Navbar>
             <AppContext.Provider value={{isAuthenticated, userHasAuthenticated, emailId, setEmailId}}>
                 <Routes/>
