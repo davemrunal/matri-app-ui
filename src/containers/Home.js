@@ -1,13 +1,16 @@
 import React from 'react';
 import './Home.css';
+import weddingImage from '../images/wedding-mandap.jpg';
 
 export default function Home() {
     return (
         <div className="Home">
-            <div className="landingImage lander">
-                {/*<img src={require('../images/ganpati.jpg')} alt=""/>*/}
-                <h1>Coming Soon</h1>
-                <p>A modern way to find your match!</p>
+            <div className="row">
+                <img className="img-fluid w-100" src={weddingImage}/>
+
+            </div>
+            <div className="row">
+                <p>Hi</p>
             </div>
         </div>
     );
