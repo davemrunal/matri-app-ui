@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { ControlLabel, FormControl, FormGroup, Radio } from 'react-bootstrap';
-import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
 import LoaderButton from '../components/LoaderButton';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input';
@@ -10,6 +8,8 @@ import { onError } from '../libs/errorLib';
 import { API } from 'aws-amplify';
 import { useHistory } from 'react-router-dom';
 import { useAppContext } from '../libs/contextLib';
+import Form from 'react-bootstrap/Form';
+import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
 
 export default function NewProfile(props) {
     const { emailId } = useAppContext();
@@ -89,48 +89,48 @@ export default function NewProfile(props) {
     return (
         <div className='NewProfile'>
             <form onSubmit={handleSubmit} noValidate className={displayErrors ? 'displayErrors' : ''}>
-                <FormGroup controlId="name" bsSize="large">
-                    <ControlLabel>Name</ControlLabel>
-                    <FormControl
+                <Form.Group controlId="name" bsSize="large">
+                    <Form.Control>Name</Form.Control>
+                    <Form.Control
                         autoFocus
                         type="text"
                         name="name"
                         required
                     />
-                </FormGroup>
-                <FormGroup controlId="dob" bsSize="large">
-                    <ControlLabel>Date of Birth</ControlLabel>
-                    <FormControl
+                </Form.Group>
+                <Form.Group controlId="dob" bsSize="large">
+                    <Form.Control>Date of Birth</Form.Control>
+                    <Form.Control
                         type="date"
                         name="dob"
                         required
                     />
-                </FormGroup>
-                <FormGroup controlId="caste" bsSize="large">
-                    <ControlLabel>Caste</ControlLabel>
-                    <FormControl
+                </Form.Group>
+                <Form.Group controlId="caste" bsSize="large">
+                    <Form.Control>Caste</Form.Control>
+                    <Form.Control
                         type="text"
                         name="caste"
                         //data-parse="uppercase"
                         required
                     />
-                </FormGroup>
+                </Form.Group>
 
-                <FormGroup controlId="gender" bsSize="large">
-                    <ControlLabel>Gender</ControlLabel>
+                <Form.Group controlId="gender" bsSize="large">
+                    <Form.Control>Gender</Form.Control>
                     <br/>
-                    <Radio name="gender" inline value='Male' onChange={(e) => setGender(e.target.value)}
+                    <Form.Check type="radio" name="gender" inline value='Male' onChange={(e) => setGender(e.target.value)}
                            checked={gender === 'Male'} required>
                         Male
-                    </Radio>{' '}
-                    <Radio name="gender" inline value='Female' onChange={(e) => setGender(e.target.value)}
+                    </Form.Check>{' '}
+                    <Form.Check type="radio" name="gender" inline value='Female' onChange={(e) => setGender(e.target.value)}
                            checked={gender === 'Female'} required>
                         Female
-                    </Radio>{' '}
-                </FormGroup>
+                    </Form.Check>{' '}
+                </Form.Group>
 
-                <FormGroup controlId="countryRegion" bsSize="large">
-                    <ControlLabel>Residence</ControlLabel>
+                <Form.Group controlId="countryRegion" bsSize="large">
+                    <Form.Control>Residence</Form.Control>
                     <br/>
                     <CountryDropdown
                         id="country"
@@ -149,18 +149,18 @@ export default function NewProfile(props) {
                         onChange={(val) => setRegion(val)}
                         required
                     />
-                </FormGroup>
-                <FormGroup controlId="city" bsSize="large">
-                    <ControlLabel>City</ControlLabel>
-                    <FormControl
+                </Form.Group>
+                <Form.Group controlId="city" bsSize="large">
+                    <Form.Control>City</Form.Control>
+                    <Form.Control
                         autoFocus
                         type="text"
                         name="city"
                         required
                     />
-                </FormGroup>
-                <FormGroup controlId="phoneNumber" bsSize="large">
-                    <ControlLabel>Mobile Number</ControlLabel>
+                </Form.Group>
+                <Form.Group controlId="phoneNumber" bsSize="large">
+                    <Form.Control>Mobile Number</Form.Control>
                     <PhoneInput
                         name="phoneNumber"
                         id="phoneNumber"
@@ -170,7 +170,7 @@ export default function NewProfile(props) {
                         value={phoneNumber}
                         onChange={setPhoneNumber}
                         required/>
-                </FormGroup>
+                </Form.Group>
 
 
                 <LoaderButton
@@ -186,9 +186,9 @@ export default function NewProfile(props) {
 
             {/*<div>*/}
             {/*    {invalid && (*/}
-            {/*    <FormGroup bsSize="large">*/}
+            {/*    <Form.Group bsSize="large">*/}
             {/*    <ShakingError text="Form is not valid"/>*/}
-            {/*    </FormGroup>)*/}
+            {/*    </Form.Group>)*/}
             {/*    }*/}
             {/*</div>*/}
         </div>
