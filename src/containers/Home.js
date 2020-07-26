@@ -9,7 +9,7 @@ export default function Home() {
     return (
         <div className="Home">
             <div className="container-fluid">
-                <div className="row">
+                <div id="image" className="row">
                     <div className="col p-0">
                         {/*<img className="img-fluid w-100" src={weddingImage}/>*/}
                         <div id="carouselExampleSlidesOnly" className="carousel slide gif-row-height"
@@ -28,7 +28,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="row second-row justify-content-center">
+                <div id="infoWithCards" className="row second-row justify-content-center">
                     <div className="row">
                         <div className="col-md-12 mt-4">
                             <h3 className="welcometext">More than just an online match-maker,
@@ -72,7 +72,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="row justify-content-center mb-1">
+                <div id="footer" className="row justify-content-center mb-1">
                     <div className="col-md-4 border-right-footer text-center mt-5">
                         <p className="lead">India | USA | Canada</p>
                     </div>
