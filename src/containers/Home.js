@@ -72,6 +72,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+                <div id="login-signup" className="row justify-content-center"></div>
                 <div id="footer" className="row justify-content-center mb-1">
                     <div className="col-md-4 border-right-footer text-center mt-5">
                         <p className="lead">India | USA | Canada</p>
