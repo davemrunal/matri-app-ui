@@ -32,30 +32,43 @@
 
 .second-row {
     background: url('../images/2018-quatrefoil-background-white.jpg') center / cover no-repeat;
-    /*height: 800px;*/
     text-align: center;
 }
 
 .welcometext {
+    display: block;
+    font-size: 35px;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    line-height: 1.2;
     text-align: center;
-    /*font-size: 35px;*/
+
     letter-spacing: 0;
-    color: #3064AA;
     opacity: 1;
-    /*font-family: 'Austin-Roman';*/
+
     font-weight: 400;
+    margin: 0;
 }
+
 
 .welcomedetail {
     text-align: center;
-    /*font-size: 24px;*/
+    font-size: 24px;
     letter-spacing: 0;
     color: #000000;
     opacity: 1;
-    /*font-family: 'HurmeGeometricSans2-Regular';*/
+    font-family: 'HurmeGeometricSans2-Regular';
     font-weight: 400;
-}
+    line-height: 1.3;
+    display: block;
 
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
 .services {
     text-align: center;
     /*font-size: 24px;*/
@@ -63,10 +76,9 @@
     color: #000000;
     opacity: 1;
     font-weight: 400;
-
 }
 
-.services .services-border {
+.services-border {
     text-align: center;
     border-bottom: 1px solid black;
     padding-bottom: 5px;
@@ -79,10 +91,9 @@
     transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
     padding: 14px 80px 18px 36px;
     cursor: pointer;
-    max-height: 250px;
 }
 
-.card:hover{
+.card:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
@@ -120,8 +131,7 @@
     background-size: 80px;
 }
 
-@media(max-width: 990px){
-    .card{
-        margin: 20px;
-    }
+
+.border-right-footer {
+    border-right: 1px solid #428bca;
 }
