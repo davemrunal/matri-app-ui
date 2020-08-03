@@ -43,12 +43,20 @@ function App(props) {
         <div className="App">
             <Navbar expand="lg">
                 <Container>
-                <Navbar.Brand as={Link} to="/">match.me</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/">
+                    <img
+                        alt=""
+                        src="./images/logo.png"
+                        width="30"
+                        height="30"
+                        className="d-inline-block align-top"
+                    />{' '}
+                    match.me</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
                         {isAuthenticated
-                            ? <Nav.Item onClick={handleLogout}>Logout</Nav.Item>
+                            ? <Nav.Item onClick={handleLogout}><span className="text-white">Logout</span></Nav.Item>
                             : <>
                                 <Nav.Link as={Link} to="/about">
                                     About Us
