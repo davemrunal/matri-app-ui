@@ -1,34 +1,19 @@
 import React from 'react';
 import './Home.css';
 import weddingImage from '../images/im1.jpg';
-import weddingImage2 from '../images/im2.jpg';
-import weddingImage3 from '../images/im3.jpg';
+import logo from '../images/logo.png';
 //import weddingImage from '../images/weddingGif-2.gif';
 
 export default function Home() {
     return (
         <div className="Home">
             <div className="container-fluid">
-                <div className="row">
+                <div id="image" className="row">
                     <div className="col p-0">
-                        {/*<img className="img-fluid w-100" src={weddingImage}/>*/}
-                        <div id="carouselExampleSlidesOnly" className="carousel slide gif-row-height"
-                             data-ride="carousel">
-                            <div className="carousel-inner">
-                                <div className="carousel-item">
-                                    <img className="img-fluid w-100" src={weddingImage} alt="First slide"/>
-                                </div>
-                                <div className="carousel-item">
-                                    <img className="img-fluid w-100" src={weddingImage2} alt="Second slide"/>
-                                </div>
-                                <div className="carousel-item active">
-                                    <img className="img-fluid w-100" src={weddingImage3} alt="Third slide"/>
-                                </div>
-                            </div>
-                        </div>
+                        <img className="img-fluid w-100" src={weddingImage}/>
                     </div>
                 </div>
-                <div className="row second-row justify-content-center">
+                <div id="infoWithCards" className="row second-row justify-content-center">
                     <div className="row">
                         <div className="col-md-12 mt-4">
                             <h3 className="welcometext">More than just an online match-maker,
@@ -72,17 +57,56 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="row justify-content-center mb-1">
-                    <div className="col-md-4 border-right-footer text-center mt-5">
-                        <p className="lead">India | USA | Canada</p>
+                <div id="login-signup" className="row justify-content-center"></div>
+                <footer className="container py-5">
+                    <div className="row">
+                        <div className="col-6 col-md">
+                            <h5>Features</h5>
+                            <ul className="list-unstyled text-small">
+                                <li><a className="text-muted" href="#">Cool stuff</a></li>
+                                <li><a className="text-muted" href="#">Random feature</a></li>
+                                <li><a className="text-muted" href="#">Team feature</a></li>
+                                <li><a className="text-muted" href="#">Stuff for developers</a></li>
+                                <li><a className="text-muted" href="#">Another one</a></li>
+                                <li><a className="text-muted" href="#">Last time</a></li>
+                            </ul>
+                        </div>
+                        <div className="col-6 col-md">
+                            <h5>Resources</h5>
+                            <ul className="list-unstyled text-small">
+                                <li><a className="text-muted" href="#">Resource</a></li>
+                                <li><a className="text-muted" href="#">Resource name</a></li>
+                                <li><a className="text-muted" href="#">Another resource</a></li>
+                                <li><a className="text-muted" href="#">Final resource</a></li>
+                            </ul>
+                        </div>
+                        <div className="col-6 col-md">
+                            <h5>Resources</h5>
+                            <ul className="list-unstyled text-small">
+                                <li><a className="text-muted" href="#">Business</a></li>
+                                <li><a className="text-muted" href="#">Education</a></li>
+                                <li><a className="text-muted" href="#">Government</a></li>
+                                <li><a className="text-muted" href="#">Gaming</a></li>
+                            </ul>
+                        </div>
+                        <div className="col-6 col-md">
+                            <h5>About</h5>
+                            <ul className="list-unstyled text-small">
+                                <li><a className="text-muted" href="#">Team</a></li>
+                                <li><a className="text-muted" href="#">Locations</a></li>
+                                <li><a className="text-muted" href="#">Privacy</a></li>
+                                <li><a className="text-muted" href="#">Terms</a></li>
+                            </ul>
+                        </div>
+                        <div className="col-12 col-md ml-5">
+                            <img src={logo}/>
+                            <small className="d-block mb-3 text-muted ml-5">© 2017-2018</small>
+                        </div>
+                        {/*<div className="col-md-4 text-center mt-5">*/}
+                        {/*    <p className="lead">India | USA | Canada</p>*/}
+                        {/*</div>*/}
                     </div>
-                    <div className="col-md-4 border-right-footer">
-                        <p className="jumbotron text-center mb-0">Footer</p>
-                    </div>
-                    <div className="col-md-4">
-                        <p className="jumbotron text-center mb-0">Footer</p>
-                    </div>
-                </div>
+                </footer>
             </div>
         </div>
     );
