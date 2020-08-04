@@ -1,36 +1,43 @@
 import React from 'react';
 import './Home.css';
-import weddingImage from '../images/im1.jpg';
 import logo from '../images/logo.png';
 //import weddingImage from '../images/weddingGif-2.gif';
+import waitingBride from '../images/waiting_bride.jpg';
 
 export default function Home() {
     return (
         <div className="Home">
             <div className="container-fluid">
-                <div id="image" className="row">
-                    <div className="col p-0">
-                        <img className="img-fluid w-100" src={weddingImage}/>
+                <div id="first-intro" className="row text-center my-5">
+                    <div className="col-md-10 offset-md-1 my-5">
+                        <h1>BECAUSE COMPUTERS DON'T CREATE CONNECTIONS, <br/> WE DO</h1>
+                        <h3 className="py-5">Find your ideal match with us</h3>
                     </div>
                 </div>
-                <div id="infoWithCards" className="row second-row justify-content-center">
-                    <div className="row">
-                        <div className="col-md-12 mt-4">
-                            <h3 className="welcometext">More than just an online match-maker,
-                                <span className="text-primary"> we bring relations to life.</span>
-                            </h3>
-                            <h4 className="welcomedetail">We are the fastest growing match-maker worldwide with one
-                                goal:
-                                <br/>
-                                <em>helping people find their match</em></h4>
-                            <br/>
-                            <h3 className="text-uppercase font-weight-bold">
-                                <span className="services-border">SERVICES</span>
-                            </h3>
-                        </div>
+                <div id="image" className="row">
+                    <div className="col-md-12 p-0">
+                        <img className="img-fluid w-100" src={waitingBride}/>
                     </div>
-                    <div className="row mx-3 mt-3 mb-5">
-                        <div className="card-deck">
+                </div>
+                <div id="background-story" className="row text-center my-5">
+                    <div className="col-md-8 offset-md-2 my-5">
+                        <h1 className="mb-3">Our Background</h1>
+                        <h3 className="mb-3">Our Story</h3>
+                        <p>With a bag of carefully curated profiles,
+                            Prime Matrimony is proud to be a leader in the industry,
+                            showing all of our customers the quality and care they deserve with every unique match.</p>
+                        <p>At Prime Matrimony, we relate to the rich, colorful and diverse Indian heritage.
+                            We are the fastest growing matrimony company worldwide and our only goal
+                            is to help people find their right match.</p>
+                        <p className="mb-5">Learn more about our offerings and sign up today.</p>
+                    </div>
+                </div>
+                <div id="infoWithCards" className="row bg-light my-5">
+                    <div className="col-md-12 text-center my-5">
+                        <h3 className="text-uppercase font-weight-bold">
+                            <u><span>SERVICES</span></u>
+                        </h3>
+                        <div className="card-deck my-5">
                             <div className="card card-1">
                                 <div className="card-body">
                                     <h3 className="card-title">Responsive Service</h3>
@@ -56,8 +63,32 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
+                    {/*<div className="row">*/}
+                    {/*    <div className="col-md-12 mt-4">*/}
+                    {/*        <h3 className="welcometext">More than just an online match-maker,*/}
+                    {/*            <span className="text-primary"> we bring relations to life.</span>*/}
+                    {/*        </h3>*/}
+                    {/*        <h4 className="welcomedetail">We are the fastest growing match-maker worldwide with one*/}
+                    {/*            goal:*/}
+                    {/*            <br/>*/}
+                    {/*            <em>helping people find their match</em></h4>*/}
+                    {/*        <br/>*/}
+                    {/*        <h3 className="text-uppercase font-weight-bold">*/}
+                    {/*            <span className="services-border">SERVICES</span>*/}
+                    {/*        </h3>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
-                <div id="login-signup" className="row justify-content-center"></div>
+                <div id="how-to" className="row my-5">
+                    <div className="col-md-6 offset-md-3 my-5 text-center">
+                        <h1 className="mb-2">How It Works</h1>
+                        <ol>
+                            <li>Register</li>
+                            <li>We get in touch with you</li>
+                            <li>We show you curated profiles</li>
+                        </ol>
+                    </div>
+                </div>
                 <footer className="container py-5">
                     <div className="row">
                         <div className="col-6 col-md">
