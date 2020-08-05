@@ -13,8 +13,10 @@ export default function Home() {
                      data-aos-duration="1000"
                      data-aos-easing="ease-in-out">
                     <div className="col-md-10 offset-md-1 my-5">
-                        <h1>BECAUSE COMPUTERS DON'T CREATE CONNECTIONS, <br/> WE DO</h1>
-                        <h3 className="py-5">Find your ideal match with us</h3>
+                        <h1>COMPUTERS DON'T CREATE CONNECTIONS, <br/><span data-aos="fade-down"
+                                                                           data-aos-duration="3000"
+                                                                           data-aos-easing="ease-in-out"><strong><em>WE DO</em></strong></span></h1>
+                        <h3 className="py-5">Find your ideal match with us.</h3>
                     </div>
                 </div>
                 <div id="image" className="row" data-aos="fade-down"
