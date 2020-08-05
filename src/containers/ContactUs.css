@@ -1,0 +1,32 @@
+form {
+    margin: 0 auto;
+    max-width: 320px;
+}
+
+#phoneNumber {
+    padding: 10px 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.displayErrors input:invalid {
+    border-color: red;
+}
+
+.displayErrors select:invalid {
+    border-color: red;
+}
+
+.displayErrors radio:invalid {
+    border-color: red;
+}
+
+.required:after {
+    content:" *";
+    color: red;
+}
+
+.message-box {
+    width: 480px;
+    height: 150px;
+}
