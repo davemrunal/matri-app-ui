@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { ControlLabel, FormControl, FormGroup, HelpBlock } from 'react-bootstrap';
 import LoaderButton from './LoaderButton';
 import { useFormFields } from '../libs/hooksLib';
 import '../containers/Signup.css';
 import { Auth } from 'aws-amplify';
 import { useHistory } from 'react-router-dom';
 import { useAppContext } from '../libs/contextLib';
+import Form from 'react-bootstrap/Form';
 
 export default function ConfirmSignup(props) {
     const history = useHistory();
@@ -34,16 +34,16 @@ export default function ConfirmSignup(props) {
 
     return (
         <form onSubmit={handleConfirmationSubmit}>
-            <FormGroup controlId="confirmationCode" bsSize="large">
-                <ControlLabel>Confirmation Code</ControlLabel>
-                <FormControl
+            <Form.Group controlId="confirmationCode" bsSize="large">
+                <Form.Label>Confirmation Code</Form.Label>
+                <Form.Control
                     autoFocus
                     type="tel"
                     onChange={handleFieldChange}
                     value={fields.confirmationCode}
                 />
-                <HelpBlock>Please check your email for the code.</HelpBlock>
-            </FormGroup>
+                <Form.Text>Please check your email for the code.</Form.Text>
+            </Form.Group>
             <LoaderButton
                 block
                 type="submit"

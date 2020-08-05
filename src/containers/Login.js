@@ -7,8 +7,8 @@ import './Login.css';
 import ConfirmSignup from '../components/ConfirmSignup';
 import { SUCCESS_MESSAGE_LOGIN_ACCNT_CONFIRM } from '../components/Constants';
 import { renderSuccessMessage } from '../components/Utils';
-import { ControlLabel, FormControl, FormGroup } from 'react-bootstrap';
 import { useAppContext } from '../libs/contextLib';
+import Form from 'react-bootstrap/Form';
 
 
 export default function Login(props) {
@@ -77,23 +77,23 @@ export default function Login(props) {
             <div>
                 {showSuccessMessage ? renderSuccessMessage('success', SUCCESS_MESSAGE_LOGIN_ACCNT_CONFIRM) : null}
                 <form onSubmit={handleSubmit}>
-                    <FormGroup controlId="email" bsSize="large">
-                        <ControlLabel>Email</ControlLabel>
-                        <FormControl
+                    <Form.Group controlId="email" bsSize="large">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control
                             autoFocus
                             type="email"
                             value={fields.email}
                             onChange={handleFieldChange}
                         />
-                    </FormGroup>
-                    <FormGroup controlId="password" bsSize="large">
-                        <ControlLabel>Password</ControlLabel>
-                        <FormControl
+                    </Form.Group>
+                    <Form.Group controlId="password" bsSize="large">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control
                             type="password"
                             value={fields.password}
                             onChange={handleFieldChange}
                         />
-                    </FormGroup>
+                    </Form.Group>
                     <Link to='/login/reset'>Forgot password</Link>
                     <LoaderButton
                         block
