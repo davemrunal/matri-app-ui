@@ -44,13 +44,13 @@ function App(props) {
             <Navbar expand="lg">
                 <Container>
                 <Navbar.Brand as={Link} to="/">
-                    <img
-                        alt=""
-                        src="./images/logo.png"
-                        width="30"
-                        height="30"
-                        className="d-inline-block align-top"
-                    />{' '}
+                    {/*<img*/}
+                    {/*    alt=""*/}
+                    {/*    src="./images/logo.png"*/}
+                    {/*    width="30"*/}
+                    {/*    height="30"*/}
+                    {/*    className="d-inline-block align-top"*/}
+                    {/*/>{' '}*/}
                     match.me</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -62,13 +62,13 @@ function App(props) {
                                     About Us
                                 </Nav.Link>
                                 <Nav.Link as={Link} to="/">
-                                    Contact Us
+                                    Pricing
                                 </Nav.Link> <Nav.Link as={Link} to="/signup">
-                                Signup
+                                Register
                             </Nav.Link>
-                                <Nav.Link as={Link} to="/login">
-                                    Login
-                                </Nav.Link>
+                                {/*<Nav.Link as={Link} to="/login">*/}
+                                {/*    Login*/}
+                                {/*</Nav.Link>*/}
                             </>
                         }
                     </Nav>
