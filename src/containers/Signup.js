@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { ControlLabel, FormControl, FormGroup } from 'react-bootstrap';
 import LoaderButton from '../components/LoaderButton';
 import { useFormFields } from '../libs/hooksLib';
 import './Signup.css';
 import { Auth } from 'aws-amplify';
 import ConfirmSignup from '../components/ConfirmSignup';
 import { useHistory } from 'react-router-dom';
+import Form from 'react-bootstrap/Form';
 
 export default function Signup(props) {
     const history = useHistory();
@@ -61,9 +61,9 @@ export default function Signup(props) {
     function renderForm() {
         return (
             <form onSubmit={handleSubmit}>
-                <FormGroup controlId="email" bsSize="large">
-                    <ControlLabel>Email</ControlLabel>
-                    <FormControl
+                <Form.Group controlId="email" bsSize="large">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
                         autoFocus
                         type="email"
                         //pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
@@ -71,23 +71,23 @@ export default function Signup(props) {
                         onChange={handleFieldChange}
                         required
                     />
-                </FormGroup>
-                <FormGroup controlId="password" bsSize="large">
-                    <ControlLabel>Password</ControlLabel>
-                    <FormControl
+                </Form.Group>
+                <Form.Group controlId="password" bsSize="large">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
                         type="password"
                         value={fields.password}
                         onChange={handleFieldChange}
                     />
-                </FormGroup>
-                <FormGroup controlId="confirmPassword" bsSize="large">
-                    <ControlLabel>Confirm Password</ControlLabel>
-                    <FormControl
+                </Form.Group>
+                <Form.Group controlId="confirmPassword" bsSize="large">
+                    <Form.Label>Confirm Password</Form.Label>
+                    <Form.Control
                         type="password"
                         onChange={handleFieldChange}
                         value={fields.confirmPassword}
                     />
-                </FormGroup>
+                </Form.Group>
                 <span id="passwordMatchError" style={{ display: ((fields.password === fields.confirmPassword))? "none" : "block" }}>
                     Passwords don't match
                 </span>

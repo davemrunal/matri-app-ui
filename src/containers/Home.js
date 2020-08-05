@@ -19,7 +19,8 @@ export default function Home() {
                         <h3 className="py-5">Find your ideal match with us.</h3>
                     </div>
                 </div>
-                <div id="image" className="row" data-aos="fade-down"
+                <div id="image" className="row"
+                     data-aos="fade-down"
                      data-aos-duration="1000"
                      data-aos-offset="200"
                      data-aos-easing="ease-in-out">
@@ -27,10 +28,12 @@ export default function Home() {
                         <img className="img-fluid w-100" src={waitingBride}/>
                     </div>
                 </div>
-                <div id="background-story" className="row text-center my-5" data-aos="fade-down"
+                <div id="background-story" className="row text-center my-5"
+                     data-aos="fade-down"
                      data-aos-duration="1000"
+                     data-aos-offset="200"
                      data-aos-easing="ease-in-out">
-                    <div className="col-md-8 offset-md-2 my-5">
+                    <div className="col-md-8 offset-md-2 my-5" >
                         <h1 className="mb-3">Our Background</h1>
                         <h3 className="mb-3">Who We Are</h3>
                         <p className="lead">With a bag of carefully curated profiles,
@@ -77,7 +80,8 @@ export default function Home() {
                 </div>
                 <div id="how-to" className="row my-5" data-aos="fade-down"
                      data-aos-duration="1000"
-                     data-aos-easing="ease-in-out">
+                     data-aos-easing="ease-in-out"
+                     data-aos-anchor-placement="center-bottom">
                     <div className="col-md-6 offset-md-3 my-5 text-center">
                         <h1 className="mb-2">How It Works</h1>
                         <ol>

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './ProfilePhotoUploadPage.css';
-import { ControlLabel, FormControl, FormGroup } from 'react-bootstrap';
 import LoaderButton from '../components/LoaderButton';
 import config from '../config';
 import { useHistory } from 'react-router-dom';
@@ -8,6 +7,7 @@ import { API } from 'aws-amplify';
 import { s3Upload } from '../libs/awsLibs';
 import { useStateWithLabel } from '../libs/stateWithLabel';
 import { useAppContext } from '../libs/contextLib';
+import Form from 'react-bootstrap/Form';
 
 export default function ProfilePhotoUploadPage() {
     const {emailId} = useAppContext();
@@ -87,9 +87,9 @@ export default function ProfilePhotoUploadPage() {
             {buildImgTag()}
             <br/>
             <form onSubmit={handleSubmit}>
-                <FormGroup controlId="photo" bsSize="large">
-                    <ControlLabel>Please upload at least three photos of yourself</ControlLabel>
-                    <FormControl
+                <Form.Group controlId="photo" bsSize="large">
+                    <Form.Label>Please upload at least three photos of yourself</Form.Label>
+                    <Form.Control
                         type="file"
                         name="photo"
                         onChange={uploadMultipleFiles}
@@ -97,7 +97,7 @@ export default function ProfilePhotoUploadPage() {
                         accept="image/*"
                         required
                     />
-                </FormGroup>
+                </Form.Group>
                 <LoaderButton
                     block
                     type="submit"
