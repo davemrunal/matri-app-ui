@@ -8,15 +8,22 @@ export default function Home() {
     return (
         <div className="Home">
             <div className="container-fluid">
-                <div id="first-intro" className="row text-center my-5"
-                     data-aos="fade-down"
-                     data-aos-duration="1000"
-                     data-aos-easing="ease-in-out">
+                <div id="first-intro" className="row text-center my-5">
                     <div className="col-md-10 offset-md-1 my-5">
-                        <h1>COMPUTERS DON'T CREATE CONNECTIONS, <br/><span data-aos="fade-down"
-                                                                           data-aos-duration="3000"
-                                                                           data-aos-easing="ease-in-out"><strong><em>WE DO</em></strong></span></h1>
-                        <h3 className="py-5">Find your ideal match with us.</h3>
+                        <h1 className="display-4"
+                            data-aos="fade-down"
+                            data-aos-duration="1000"
+                            data-aos-easing="ease-in-out">Match Finding, <span data-aos="fade-down"
+                                                                               data-aos-duration="3000"
+                                                                               data-aos-easing="ease-in-out">Done Right.</span>
+                        </h1>
+                        <h3 className="mt-3 mb-5"><em>Because Computers Don't Create Connections, <br/>
+                            <span data-aos="fade-down"
+                                  data-aos-duration="3000"
+                                  data-aos-easing="ease-in-out"><strong><em>We Do.</em></strong>
+                        </span></em>
+                        </h3>
+                        {/*<h3 className="py-5 lead">Find your ideal match with us.</h3>*/}
                     </div>
                 </div>
                 <div id="image" className="row"
@@ -33,7 +40,7 @@ export default function Home() {
                      data-aos-duration="1000"
                      data-aos-offset="200"
                      data-aos-easing="ease-in-out">
-                    <div className="col-md-8 offset-md-2 my-5" >
+                    <div className="col-md-8 offset-md-2 my-5">
                         <h1 className="mb-3">Our Background</h1>
                         <h3 className="mb-3">Who We Are</h3>
                         <p className="lead">With a bag of carefully curated profiles,
@@ -46,9 +53,11 @@ export default function Home() {
                         <p className="mb-5 lead">Learn more about our offerings and sign up today.</p>
                     </div>
                 </div>
-                <div id="infoWithCards" className="row bg-light my-5" data-aos="fade-down"
+                <div id="infoWithCards" className="row bg-light my-5"
+                     data-aos="fade-down"
                      data-aos-duration="1000"
-                     data-aos-easing="ease-in-out">
+                     data-aos-easing="ease-in-out"
+                     data-aos-anchor-placement="center-bottom">
                     <div className="col-md-12 text-center my-5">
                         <h3 className="mb-3"><u>SERVICES</u></h3>
                         <div className="card-deck my-5">
@@ -93,7 +102,8 @@ export default function Home() {
                 </div>
                 <div id="contact-us" className="row bg-light my-5" data-aos="fade-down"
                      data-aos-duration="1000"
-                     data-aos-easing="ease-in-out">
+                     data-aos-easing="ease-in-out"
+                     data-aos-anchor-placement="center-bottom">
                     <div className="col-md-12 my-5">
                         <h3 className="mb-5 text-center">Questions?</h3>
                         <ContactUs/>
