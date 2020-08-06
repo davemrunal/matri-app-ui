@@ -51,7 +51,7 @@ function App(props) {
                     {/*    height="30"*/}
                     {/*    className="d-inline-block align-top"*/}
                     {/*/>{' '}*/}
-                    match.me</Navbar.Brand>
+                    <em>Prime Matrimony</em></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
