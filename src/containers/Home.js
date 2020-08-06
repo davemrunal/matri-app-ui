@@ -13,7 +13,8 @@ export default function Home() {
                         <h1 className="display-4"
                             data-aos="fade-down"
                             data-aos-duration="1000"
-                            data-aos-easing="ease-in-out">Match Finding, <span data-aos="fade-down"
+                            data-aos-easing="ease-in-out"
+                            data-aos-once="true">Match Finding, <span data-aos="fade-down"
                                                                                data-aos-duration="3000"
                                                                                data-aos-easing="ease-in-out">Done Right.</span>
                         </h1>
@@ -30,14 +31,16 @@ export default function Home() {
                     <div className="col-md-12 p-0">
                         <img className="img-fluid w-100" src={waitingBride} data-aos="fade-in"
                              data-aos-duration="1000"
-                             data-aos-easing="ease-in-out"/>
+                             data-aos-easing="ease-in-out"
+                             data-aos-once="true"/>
                     </div>
                 </div>
                 <div id="background-story" className="row text-center my-5">
                     <div className="col-md-8 offset-md-2 my-5"
-                         data-aos="fade-down"
+                         data-aos="fade-in"
                          data-aos-duration="1000"
-                         data-aos-easing="ease-in-out">
+                         data-aos-easing="ease-in-out"
+                         data-aos-once="true">
                         <h1 className="mb-3">Our Background</h1>
                         <h3 className="mb-3">Who We Are</h3>
                         <p className="lead">With a bag of carefully curated profiles,
@@ -51,9 +54,10 @@ export default function Home() {
                     </div>
                 </div>
                 <div id="infoWithCards" className="row bg-light my-5"
-                     data-aos="fade-down"
+                     data-aos="fade-in"
                      data-aos-duration="1000"
-                     data-aos-easing="ease-in-out">
+                     data-aos-easing="ease-in-out"
+                     data-aos-once="true">
                     <div className="col-md-12 text-center my-5">
                         <h3 className="mb-3"><u>SERVICES</u></h3>
                         <div className="card-deck my-5">
@@ -83,10 +87,11 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div id="how-to" className="row my-5" data-aos="fade-down"
+                <div id="how-to" className="row my-5" data-aos="fade-in"
                      data-aos-duration="1000"
                      data-aos-easing="ease-in-out"
-                     data-aos-anchor-placement="center-bottom">
+                     data-aos-anchor-placement="center-bottom"
+                     data-aos-once="true">
                     <div className="col-md-6 offset-md-3 my-5 text-center">
                         <h1 className="mb-2">How It Works</h1>
                         <ol>
@@ -96,10 +101,11 @@ export default function Home() {
                         </ol>
                     </div>
                 </div>
-                <div id="contact-us" className="row bg-light my-5" data-aos="fade-down"
+                <div id="contact-us" className="row bg-light my-5" data-aos="fade-in"
                      data-aos-duration="1000"
                      data-aos-easing="ease-in-out"
-                     data-aos-anchor-placement="center-bottom">
+                     data-aos-anchor-placement="center-bottom"
+                     data-aos-once="true">
                     <div className="col-md-12 my-5">
                         <h3 className="mb-5 text-center">Questions?</h3>
                         <ContactUs/>
