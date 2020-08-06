@@ -56,8 +56,7 @@ export default function Home() {
                 <div id="infoWithCards" className="row bg-light my-5"
                      data-aos="fade-down"
                      data-aos-duration="1000"
-                     data-aos-easing="ease-in-out"
-                     data-aos-anchor-placement="center-bottom">
+                     data-aos-easing="ease-in-out">
                     <div className="col-md-12 text-center my-5">
                         <h3 className="mb-3"><u>SERVICES</u></h3>
                         <div className="card-deck my-5">
