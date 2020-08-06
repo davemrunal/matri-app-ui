@@ -26,21 +26,18 @@ export default function Home() {
                         {/*<h3 className="py-5 lead">Find your ideal match with us.</h3>*/}
                     </div>
                 </div>
-                <div id="image" className="row"
-                     data-aos="fade-down"
-                     data-aos-duration="1000"
-                     data-aos-offset="200"
-                     data-aos-easing="ease-in-out">
+                <div id="image" className="row">
                     <div className="col-md-12 p-0">
-                        <img className="img-fluid w-100" src={waitingBride}/>
+                        <img className="img-fluid w-100" src={waitingBride} data-aos="fade-in"
+                             data-aos-duration="1000"
+                             data-aos-easing="ease-in-out"/>
                     </div>
                 </div>
-                <div id="background-story" className="row text-center my-5"
-                     data-aos="fade-down"
-                     data-aos-duration="1000"
-                     data-aos-offset="200"
-                     data-aos-easing="ease-in-out">
-                    <div className="col-md-8 offset-md-2 my-5">
+                <div id="background-story" className="row text-center my-5">
+                    <div className="col-md-8 offset-md-2 my-5"
+                         data-aos="fade-down"
+                         data-aos-duration="1000"
+                         data-aos-easing="ease-in-out">
                         <h1 className="mb-3">Our Background</h1>
                         <h3 className="mb-3">Who We Are</h3>
                         <p className="lead">With a bag of carefully curated profiles,
