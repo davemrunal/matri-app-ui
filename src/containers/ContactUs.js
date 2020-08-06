@@ -134,7 +134,7 @@ export default function ContactUs(props) {
                         <PhoneInput
                             name="phoneNumber"
                             id="phoneNumber"
-                            defaultCountry="US"
+                            defaultCountry="IN"
                             placeholder="Enter phone number"
                             countrySelectProps={{unicodeFlags: true}}
                             value={phoneNumber}
