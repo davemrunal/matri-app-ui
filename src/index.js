@@ -7,6 +7,12 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Amplify from 'aws-amplify';
 import config from './config';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+
+
+AOS.init();
+
 Amplify.configure({
     Auth: {
         mandatorySignIn: true,
