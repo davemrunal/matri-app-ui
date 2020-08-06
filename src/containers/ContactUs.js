@@ -7,7 +7,7 @@ import PhoneInput from 'react-phone-number-input';
 import './ContactUs.css';
 import LocationSearchInput from '../components/LocationSearchInput';
 import { onError } from '../libs/errorLib';
-import { inputParsers } from '../components/Utils';
+import { inputParsers, renderSuccessMessage } from '../components/Utils';
 
 export default function ContactUs(props) {
     const [submitted, setSubmitted] = useState(false);
@@ -71,7 +71,7 @@ export default function ContactUs(props) {
     async function sendMessage(data) {
         //apiName first param coming from index.js
         //path second param coming from endpoint path
-        const response = await fetch('https://fb3xbiq5rj.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer', {
+        const response = await fetch('https://1vplfdsj15.execute-api.us-east-1.amazonaws.com/prod/static-site-mailer', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -109,7 +109,7 @@ export default function ContactUs(props) {
     function renderContactUsForm() {
         return (
             <div>
-                {/*{showSuccessMessage ? renderSuccessMessage('success', "Message Sent!") : null}*/}
+                {showSuccessMessage ? renderSuccessMessage('success', 'Message Sent!') : null}
                 <form onSubmit={handleSubmit} noValidate className={displayErrors ? 'displayErrors' : ''}>
                     <Form.Group controlId="name" bsSize="large">
                         <Form.Label className="required">Name</Form.Label>
