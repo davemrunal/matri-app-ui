@@ -13,6 +13,7 @@ import AuthenticatedRoute from './components/AuthenticatedRoute';
 import MatchedProfileDisplay from './containers/MatchedProfilesDisplay';
 import AboutUs from './components/AboutUs';
 import ContactUs from './containers/ContactUs';
+import Pricing from './containers/Pricing';
 
 export default function Routes() {
     return (
@@ -37,6 +38,9 @@ export default function Routes() {
             </UnauthenticatedRoute>
             <UnauthenticatedRoute exact path="/about">
                 <AboutUs />
+            </UnauthenticatedRoute>
+            <UnauthenticatedRoute exact path="/pricing">
+                <Pricing />
             </UnauthenticatedRoute>
             <AuthenticatedRoute exact path="/profileDetails">
                 <NewProfile />
