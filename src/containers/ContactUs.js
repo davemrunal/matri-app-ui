@@ -7,7 +7,7 @@ import PhoneInput from 'react-phone-number-input';
 import './ContactUs.css';
 import LocationSearchInput from '../components/LocationSearchInput';
 import { onError } from '../libs/errorLib';
-import { inputParsers, renderSuccessMessage } from '../components/Utils';
+import { inputParsers } from '../components/Utils';
 
 export default function ContactUs(props) {
     const [submitted, setSubmitted] = useState(false);
@@ -15,6 +15,7 @@ export default function ContactUs(props) {
     const [location, setLocation] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [invalid, setInvalid] = useState(false);
+    const [serverError, setServerError] = useState(false);
     const [displayErrors, setDisplayErrors] = useState(false);
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
     const [fields, handleFieldChange] = useFormFields({
@@ -25,13 +26,20 @@ export default function ContactUs(props) {
     async function handleSubmit(event) {
         event.preventDefault();
         const data = handleFormEvent(event);
+        if (data == null) {
+            return;
+        }
         console.log('Posting this data \n' + JSON.stringify(data));
         setIsLoading(true);
         try {
             console.log('submitted');
             const response = await sendMessage(data);
             // history.push('/profilePhotos');
-            setShowSuccessMessage(true);
+            if (response.status === 200) {
+                setShowSuccessMessage(true);
+            } else {
+                setServerError(true);
+            }
         } catch (e) {
             onError(e);
         }
@@ -155,17 +163,28 @@ export default function ContactUs(props) {
                     </Form.Group>
                     <br/>
                     <LoaderButton className="mb-3"
-                        block
-                        type="submit"
-                        bsSize="medium"
-                        isLoading={isLoading}
-                        disabled={validateForm()}
+                                  block
+                                  type="submit"
+                                  bsSize="medium"
+                                  isLoading={isLoading}
+                                  disabled={validateForm()}
                     >
                         Send
                     </LoaderButton>
 
-                    {showSuccessMessage && <div id="success" className="alert alert-success alert-dismissible fade show text-center" role="alert">
+                    {showSuccessMessage &&
+                    <div className="alert alert-success alert-dismissible fade show text-center animateMsg"
+                         role="alert">
                         Thanks for the message.<br/>We will be in touch shortly.
+                        <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>}
+
+                    {serverError &&
+                    <div className="alert alert-warning alert-dismissible fade show text-center animateMsg"
+                         role="alert">
+                        Something went wrong<br/>Please try later.
                         <button type="button" className="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
