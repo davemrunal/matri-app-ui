@@ -164,7 +164,7 @@ export default function ContactUs(props) {
                         Send
                     </LoaderButton>
 
-                    {showSuccessMessage && <div className="alert alert-success alert-dismissible fade show text-center" role="alert">
+                    {showSuccessMessage && <div id="success" className="alert alert-success alert-dismissible fade show text-center" role="alert">
                         Thanks for the message.<br/>We will be in touch shortly.
                         <button type="button" className="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
