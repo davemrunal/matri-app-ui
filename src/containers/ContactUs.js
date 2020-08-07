@@ -169,7 +169,7 @@ export default function ContactUs(props) {
                                   isLoading={isLoading}
                                   disabled={validateForm()}
                     >
-                        Send
+                        {isLoading ? 'Sending…' : 'Send'}
                     </LoaderButton>
 
                     {showSuccessMessage &&
