@@ -61,7 +61,7 @@ function App(props) {
                                 <Nav.Link as={Link} to="/about">
                                     About Us
                                 </Nav.Link>
-                                <Nav.Link as={Link} to="/">
+                                <Nav.Link as={Link} to="/pricing">
                                     Pricing
                                 </Nav.Link> <Nav.Link as={Link} to="/signup">
                                 Register
