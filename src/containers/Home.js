@@ -45,7 +45,7 @@ export default function Home() {
                         <h3 className="mb-3">Who We Are</h3>
                         <p className="lead">With a bag of carefully curated profiles,
                             Prime Matrimony is proud to be a leader in the industry,
-                            showing all of our customers the quality and care they deserve with every unique match.</p>
+                            showing all of our clients the quality and care they deserve with every unique match.</p>
                         <p className="lead">At Prime Matrimony, we relate to the rich, colorful and diverse Indian
                             heritage.
                             We are the fastest growing matrimony company worldwide and our only goal
