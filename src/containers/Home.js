@@ -101,7 +101,7 @@ export default function Home() {
                         </ol>
                     </div>
                 </div>
-                <div id="contact-us" className="row bg-light my-5" data-aos="fade-in"
+                <div id="contact-us" className="row bg-light mt-5 mb-2" data-aos="fade-in"
                      data-aos-duration="1000"
                      data-aos-easing="ease-in-out"
                      data-aos-anchor-placement="center-bottom"
@@ -111,7 +111,7 @@ export default function Home() {
                         <ContactUs/>
                     </div>
                 </div>
-                <footer className="my-5 pt-5 text-muted text-center text-small">
+                <footer className="my-3 pt-5 text-muted text-center text-small">
                     <p className="mb-1">© 2017-2018 Prime Matrimony</p>
                 </footer>
             </div>
