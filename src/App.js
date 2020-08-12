@@ -43,26 +43,27 @@ function App(props) {
         <div className="App">
             <Navbar expand="lg">
                 <Container>
-                <Navbar.Brand as={Link} to="/">
-                    <em>Prime Matrimony</em></Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ml-auto">
-                        {isAuthenticated
-                            ? <Nav.Item onClick={handleLogout}><span className="text-white">Logout</span></Nav.Item>
-                            : <>
-                                <Nav.Link as={Link} to="/about">
-                                    About Us
-                                </Nav.Link>
-                                <Nav.Link as={Link} to="/pricing">
-                                    Pricing
-                                </Nav.Link> <Nav.Link as={Link} to="/signup">
-                                Register
-                            </Nav.Link>
-                            </>
-                        }
-                    </Nav>
-                </Navbar.Collapse>
+                    <Navbar.Brand as={Link} to="/">
+                        <em>Prime Matrimony</em></Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="ml-auto">
+                            {isAuthenticated
+                                ? <Nav.Item onClick={handleLogout}><span className="text-white">Logout</span></Nav.Item>
+                                : <>
+                                    {/*<Nav.Link as={Link} to="/about">*/}
+                                    {/*    About Us*/}
+                                    {/*</Nav.Link>*/}
+                                    <Nav.Link as={Link} to="/register">
+                                        <button type="button" className="btn btn-outline-light">Register</button>
+                                    </Nav.Link>
+                                    {/*<Nav.Link as={Link} to="/signup">*/}
+                                    {/*    Register*/}
+                                    {/*</Nav.Link>*/}
+                                </>
+                            }
+                        </Nav>
+                    </Navbar.Collapse>
                 </Container>
             </Navbar>
             <AppContext.Provider value={{isAuthenticated, userHasAuthenticated, emailId, setEmailId}}>
