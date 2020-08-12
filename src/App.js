@@ -55,7 +55,7 @@ function App(props) {
                                     {/*    About Us*/}
                                     {/*</Nav.Link>*/}
                                     <Nav.Link as={Link} to="/register">
-                                        <button type="button" className="btn btn-outline-light">Register</button>
+                                        <button type="button" className="btn btn-light">Register</button>
                                     </Nav.Link>
                                     {/*<Nav.Link as={Link} to="/signup">*/}
                                     {/*    Register*/}
