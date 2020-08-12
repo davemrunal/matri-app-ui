@@ -1,5 +1,6 @@
 import React from 'react';
 import './Pricing.css';
+import ContactUs from './ContactUs';
 
 export default function Pricing(props) {
     return (
@@ -12,12 +13,8 @@ export default function Pricing(props) {
                     <div className="col-md-8 offset-md-2">
                         <div className="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
                             <h1 className="display-4">Pricing</h1>
-                            <p className="lead">Quickly build an effective pricing table for your potential customers
-                                with
-                                this
-                                Bootstrap example. It’s built with default Bootstrap components and utilities with
-                                little
-                                customization.</p>
+                            <p className="lead">We have a plan built for everyone's unique needs.
+                                </p>
                         </div>
                     </div>
                 </div>
@@ -33,17 +30,18 @@ export default function Pricing(props) {
                                     <h4 className="my-0 font-weight-normal">Silver</h4>
                                 </div>
                                 <div className="card-body">
-                                    <h1 className="card-title pricing-card-title">$0 <small className="text-muted">/
-                                        mo</small></h1>
+                                    <h1 className="card-title pricing-card-title">&#8360; 10,000 </h1>
+                                        {/*<small className="text-muted">/ mo</small>*/}
                                     <ul className="list-unstyled mt-3 mb-4">
-                                        <li>10 users included</li>
-                                        <li>2 GB of storage</li>
+                                        <li>Upto 3 matches</li>
+                                        <li>Conference Calls</li>
+                                        <li>Meeting Arrangement</li>
                                         <li>Email support</li>
-                                        <li>Help center access</li>
                                     </ul>
-                                    <button type="button" className="btn btn-lg btn-block btn-outline-primary">Sign up
-                                        for free
-                                    </button>
+                                    <a href="#contactRegister">
+                                        <button type="button" className="btn btn-lg btn-block btn-primary">Get started
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                             <div className="card mb-4 box-shadow"
@@ -55,16 +53,17 @@ export default function Pricing(props) {
                                     <h4 className="my-0 font-weight-normal">Gold</h4>
                                 </div>
                                 <div className="card-body">
-                                    <h1 className="card-title pricing-card-title">$15 <small className="text-muted">/
-                                        mo</small></h1>
+                                    <h1 className="card-title pricing-card-title">&#8360; 13,000 </h1>
                                     <ul className="list-unstyled mt-3 mb-4">
-                                        <li>20 users included</li>
-                                        <li>10 GB of storage</li>
-                                        <li>Priority email support</li>
-                                        <li>Help center access</li>
+                                        <li>Upto 5 matches</li>
+                                        <li>Conference Calls</li>
+                                        <li>Meeting Arrangement</li>
+                                        <li>Email support</li>
                                     </ul>
-                                    <button type="button" className="btn btn-lg btn-block btn-primary">Get started
-                                    </button>
+                                    <a href="#contactRegister">
+                                        <button type="button" className="btn btn-lg btn-block btn-primary">Get started
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                             <div className="card mb-4 box-shadow"
@@ -76,21 +75,39 @@ export default function Pricing(props) {
                                     <h4 className="my-0 font-weight-normal">Platinum</h4>
                                 </div>
                                 <div className="card-body">
-                                    <h1 className="card-title pricing-card-title">$29 <small className="text-muted">/
-                                        mo</small></h1>
+                                    <h1 className="card-title pricing-card-title">&#8360; 15,000 </h1>
                                     <ul className="list-unstyled mt-3 mb-4">
-                                        <li>30 users included</li>
-                                        <li>15 GB of storage</li>
-                                        <li>Phone and email support</li>
-                                        <li>Help center access</li>
+                                        <li>Upto 10 matches</li>
+                                        <li>Conference Calls</li>
+                                        <li>Meeting Arrangement</li>
+                                        <li>Email support</li>
                                     </ul>
-                                    <button type="button" className="btn btn-lg btn-block btn-primary">Contact us
-                                    </button>
+                                    <a href="#contactRegister">
+                                        <button type="button" className="btn btn-lg btn-block btn-primary">Get started
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div id="contactRegister" className="row bg-light my-5"
+                     data-aos="fade-in"
+                     data-aos-duration="1000"
+                     data-aos-easing="ease-in-out"
+                     data-aos-anchor-placement="center-bottom"
+                     data-aos-once="true">
+                    <div className="col-md-12 my-5">
+                        <h3 className="mb-5 text-center">Register</h3>
+                        <ContactUs messagePlaceHolder="Please type package name. Gold, Silver or Platinum"
+                                   successMessage="Thank you for your interest.Our representative will be in touch with you shortly." />
+                    </div>
+                </div>
+
+                <footer className="my-3 pt-5 text-muted text-center text-small">
+                    <p className="mb-1">© 2017-2018 Prime Matrimony</p>
+                </footer>
+
             </div>
         </div>
     );
