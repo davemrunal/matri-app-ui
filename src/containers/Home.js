@@ -108,7 +108,7 @@ export default function Home() {
                      data-aos-once="true">
                     <div className="col-md-12 my-5">
                         <h3 className="mb-5 text-center">Questions?</h3>
-                        <ContactUs/>
+                        <ContactUs successMessage="Thanks for the message.We will be in touch shortly."/>
                     </div>
                 </div>
                 <footer className="my-3 pt-5 text-muted text-center text-small">

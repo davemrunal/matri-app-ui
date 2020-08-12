@@ -19,41 +19,41 @@ export default function Routes() {
     return (
         <Switch>
             <Route exact path="/">
-                <Home />
+                <Home/>
             </Route>
             <UnauthenticatedRoute exact path="/login">
-                <Login />
+                <Login/>
             </UnauthenticatedRoute>
             <UnauthenticatedRoute exact path="/confirmAccount">
-                <ConfirmSignup />
+                <ConfirmSignup/>
             </UnauthenticatedRoute>
             <UnauthenticatedRoute exact path="/login/reset">
-                <ResetPassword />
+                <ResetPassword/>
             </UnauthenticatedRoute>
             <UnauthenticatedRoute exact path="/signup">
-                <Signup />
+                <Signup/>
             </UnauthenticatedRoute>
             <UnauthenticatedRoute exact path="/contact">
-                <ContactUs />
+                <ContactUs/>
             </UnauthenticatedRoute>
             <UnauthenticatedRoute exact path="/about">
-                <AboutUs />
+                <AboutUs/>
             </UnauthenticatedRoute>
-            <UnauthenticatedRoute exact path="/pricing">
-                <Pricing />
+            <UnauthenticatedRoute exact path="/register">
+                <Pricing/>
             </UnauthenticatedRoute>
             <AuthenticatedRoute exact path="/profileDetails">
-                <NewProfile />
+                <NewProfile/>
             </AuthenticatedRoute>
             <AuthenticatedRoute exact path="/matchedProfiles">
-                <MatchedProfileDisplay />
+                <MatchedProfileDisplay/>
             </AuthenticatedRoute>
             <AuthenticatedRoute exact path="/profilePhotos">
-                <ProfilePhotoUploadPage />
+                <ProfilePhotoUploadPage/>
             </AuthenticatedRoute>
             {/* Finally, catch all unmatched routes */}
             <Route>
-                <NotFound />
+                <NotFound/>
             </Route>
         </Switch>
     );
