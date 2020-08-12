@@ -176,7 +176,9 @@ export default function ContactUs(props) {
                     {showSuccessMessage &&
                     <div className="alert alert-success alert-dismissible fade show text-center animateMsg"
                          role="alert">
-                        {props.successMessage.split(".")[0]}.<br/>{props.successMessage.split(".")[1]}.
+                        {props.successMessage.split(".")[0]}.
+                        <br/>
+                        {props.successMessage.split(".")[1]}.
                         <button type="button" className="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
